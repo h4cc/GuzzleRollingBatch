@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    This file is part of the h4cc/GuzzleRollingBatch package.
+
+    (c) Julius Beckmann <github@h4cc.de>
+
+    For the full copyright and license information, please view the LICENSE
+    file that was distributed with this source code.
+-->
+<project name="h4cc_GuzzleRollingBatch" default="test">
+
+    <target name="prepare">
+        <mkdir dir="build"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
+    <target name="test" description="Run unit tests">
+        <trycatch>
+            <try>
+                <exec passthru="true" command="php tests/server.php" spawn="true" output="build/server.pid"/>
+                <exec passthru="true" command="vendor/bin/phpunit --coverage-html build/coverage/" checkreturn="true"/>
+            </try>
+            <finally>
+                <!-- Allways kill server -->
+                <exec passthru="true" command="kill $(cat build/server.pid)"/>
+            </finally>
+        </trycatch>
+    </target>
+
+</project>
