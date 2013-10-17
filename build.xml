@@ -17,7 +17,7 @@
         <delete dir="build"/>
     </target>
 
-    <target name="test" description="Run unit tests">
+    <target name="test" description="Run unit tests" depends="prepare">
         <trycatch>
             <try>
                 <exec passthru="true" command="php tests/server.php" spawn="true" output="build/server.pid"/>
