@@ -2,6 +2,8 @@ GuzzleRollingBatch
 ===================
 
 [![Build Status](https://travis-ci.org/h4cc/GuzzleRollingBatch.png?branch=master)](https://travis-ci.org/h4cc/GuzzleRollingBatch)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/h4cc/GuzzleRollingBatch/badges/quality-score.png?s=123cb0bb8a0c1ab48f5a4d8bde6958030647eedc)](https://scrutinizer-ci.com/g/h4cc/GuzzleRollingBatch/)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/ac04d1d5-33e8-4047-b2f3-79b987a71668/mini.png)](https://insight.sensiolabs.com/projects/ac04d1d5-33e8-4047-b2f3-79b987a71668)
 
 This is a parallel Executor for guzzle that can process multiple requests in parallel.
 Instead of processing a batch of requests, there are two queues for requests and responses for dynamic handling
