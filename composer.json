@@ -1,6 +1,18 @@
 {
+    "name": "h4cc/guzzle-rolling-batch",
+    "description": "A parallel executor for Guzzle Requests.",
+    "keywords": ["guzzle", "curl", "http", "client", "parallel"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Julius Beckmann",
+            "email": "github@h4cc.de"
+        }
+    ],
     "require": {
-        "guzzle/guzzle": "~3.0"
+        "guzzle/http": "~3.0",
+        "ext-curl": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "~3.7",
@@ -10,7 +22,8 @@
     },
     "autoload": {
         "psr-0": {
-            "": "src/"
+            "h4cc\\GuzzleRollingBatch\\Tests": "tests/",
+            "h4cc\\GuzzleRollingBatch": "src/"
         }
     }
 }

@@ -53,6 +53,9 @@ Getting the current status can be fetched with 'countActive()' and 'isIdle()'.
 
 A example for processing one or more request at once
 ```php
+use Guzzle\Http\Message\Request;
+use h4cc\GuzzleRollingBatch\RollingBatch;
+
 $request = new Request('GET', 'http://example.com/');
 $request->getCurlOptions()->set(CURLOPT_TIMEOUT_MS, 1000); // 1 Second
 
@@ -81,6 +84,8 @@ It is also possible to use the guzzle request events.
 For example listening for exceptions.
 
 ```php
+use Guzzle\Common\Event;
+
 $request->getEventDispatcher()->addListener('request.exception', function(Event $event) {
     throw $event['exception'];
 });
