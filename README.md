@@ -1,6 +1,8 @@
 GuzzleRollingBatch
 ===================
 
+[![Build Status](https://travis-ci.org/h4cc/GuzzleRollingBatch.png?branch=master)](https://travis-ci.org/h4cc/GuzzleRollingBatch)
+
 This is a parallel Executor for guzzle that can process multiple requests in parallel.
 Instead of processing a batch of requests, there are two queues for requests and responses for dynamic handling
 of execution, adding new requests and processing responses.
