@@ -21,7 +21,8 @@
         <trycatch>
             <try>
                 <exec passthru="true" command="php tests/server.php" spawn="true" output="build/server.pid"/>
-                <exec passthru="true" command="vendor/bin/phpunit --coverage-html build/coverage/" checkreturn="true"/>
+                <exec passthru="true" command="vendor/bin/phpunit --coverage-html build/coverage/ --coverage-text"
+                      checkreturn="true"/>
             </try>
             <finally>
                 <!-- Allways kill server -->
