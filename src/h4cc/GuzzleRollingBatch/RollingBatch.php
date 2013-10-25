@@ -105,6 +105,7 @@ class RollingBatch implements RollingBatchInterface
 
     /**
      * Starts new requests if allowed and executes active requests.
+     * Returns true if number of parallel requests is reached.
      *
      * @return bool
      */
@@ -116,7 +117,7 @@ class RollingBatch implements RollingBatchInterface
             $this->perform();
         }
 
-        return (bool)$this->countActive();
+        return ($this->getNumberParallel() != 0) && ($this->countActive() >= $this->getNumberParallel());
     }
 
     /**
